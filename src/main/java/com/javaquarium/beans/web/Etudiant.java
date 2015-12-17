@@ -1,12 +1,5 @@
 package com.javaquarium.beans.web;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts.action.ActionErrors;
-import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.ActionMessage;
-
 /**
  * 
  * @author Benjamin Class Etudiant : Modèle de donnée pour un etudiant (rest webservice)

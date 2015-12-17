@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- Définition des Formulaires -->
+	<form-beans type="org.apache.struts.action.ActionFormBean">
+		<form-bean name="loginForm" type="com.javaquarium.beans.web.LoginVO" />
+		<form-bean name="ajoutPoisson" type="com.javaquarium.beans.web.PoissonVO" />
+	</form-beans>
+	<!-- Définition des Mappings (redirection) -->
+	<action-mappings>
+		<action path="/ListerEspece" type="com.javaquarium.action.ListerEspeceAction">
+			<forward name="success" path="/UC01_especes.jsp" />
+			<forward name="failed" path="/UC00_login.jsp" />
+		</action>
+		<action path="/loginUser" input="/UC00_login.jsp"
+			scope="request" name="loginForm" type="com.javaquarium.action.LoginAction">
+			<forward name="success" path="/ListerEspece.do" redirect="false" />
+			<forward name="failed" path="/UC00_login.jsp" redirect="false" />
+		</action>
+		<action path="/ajoutPoisson" input="/UC03_ajout.jsp"
+			scope="request" name="ajoutPoisson" type="com.javaquarium.action.AjoutAction">
+			<forward name="success" path="/ListerEspece.do" redirect="false" />
+			<forward name="failed" path="/UC03_ajout.jsp" redirect="false" />
+		</action>
+	</action-mappings>
+	<!-- Application ressource -->
+	<message-resources parameter="ApplicationResources" />
+
+</struts-config>

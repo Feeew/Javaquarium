@@ -22,6 +22,9 @@
 			<forward name="success" path="/ListerEspece.do" redirect="false" />
 			<forward name="failed" path="/UC03_ajout.jsp" redirect="false" />
 		</action>
+		<action path="/SauverAquarium" type="com.javaquarium.action.SauverAquariumAction">
+			<forward name="success" path="/UC00_login.jsp" />
+		</action>
 	</action-mappings>
 	<!-- Application ressource -->
 	<message-resources parameter="ApplicationResources" />

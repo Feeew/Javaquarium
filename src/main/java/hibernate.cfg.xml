@@ -20,6 +20,7 @@
 		 <!-- Fichiers à mapper -->  
 		 <mapping class="com.javaquarium.beans.web.PoissonVO" /> 
 		 <mapping class="com.javaquarium.beans.data.PoissonDO" />
+		 <mapping class="com.javaquarium.beans.data.AquariumDO" />
 
 	</session-factory>
 </hibernate-configuration>

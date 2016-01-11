@@ -22,7 +22,7 @@
 	</div>
 	<html:form action="loginUser">
 		<bean:message key='home.tableau.titre.login' /> <html:text property="login" />
-		<bean:message key='home.tableau.titre.password' /> <html:text property="password" />
+		<bean:message key='home.tableau.titre.password' /> <html:password property="password" />
 		<html:submit property="submit" value="Envoyer" />
 	</html:form>
 </body>

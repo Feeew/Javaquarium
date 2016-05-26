@@ -12,14 +12,14 @@ import com.javaquarium.util.HibernateUtils;
 public class AquariumDAO implements IAquariumDAO {
 
 	@Override
-	public void addPoisson(String especePoisson, Integer idUser) {
-		Session s = HibernateUtils.getSession();   
+	public void addPoisson(final String especePoisson, final Integer idUser) {
+		final Session s = HibernateUtils.getSession();   
 		
 		// Début de la transaction 
-		Transaction t = s.beginTransaction();   
+		final Transaction t = s.beginTransaction();   
 		
 		// Création d'un objet Event 
-		AquariumDO a = new AquariumDO(); 
+		final AquariumDO a = new AquariumDO(); 
 		a.setEspecePoisson(especePoisson);	
 		a.setIdUser(idUser);
 		
@@ -39,14 +39,14 @@ public class AquariumDAO implements IAquariumDAO {
 		s.beginTransaction();
 
 		// Création de la requête
-		Query q = s.createQuery("delete Aquarium");
+		final Query q = s.createQuery("delete Aquarium");
 		// Exécution de la requête
 		q.executeUpdate();
 
 	}
 
 	@Override
-	public List<AquariumDO> getAquarium(Integer idUser) {
+	public List<AquariumDO> getAquarium(final Integer idUser) {
 		// TODO Auto-generated method stub
 		return null;
 	}

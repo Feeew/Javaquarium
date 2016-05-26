@@ -19,7 +19,7 @@ public class AquariumService implements IAquariumService {
 
 	
 	@Override
-	public List<String> getPoissons(Integer idUser) {
+	public List<String> getPoissons(final Integer idUser) {
 		final IAquariumDAO aDAO = new AquariumDAO();
 		final List<AquariumDO> LaDO = aDAO.getAquarium(idUser);
 
@@ -39,9 +39,9 @@ public class AquariumService implements IAquariumService {
 	}
 
 	@Override
-	public void sauverAquarium(Integer idUser, List<PoissonVO> poissonsVO) {
+	public void sauverAquarium(final Integer idUser, final List<PoissonVO> poissonsVO) {
 		// TODO Auto-generated method stub
-		IAquariumDAO aDAO = new AquariumDAO();
+		final IAquariumDAO aDAO = new AquariumDAO();
 		for (PoissonVO pVO : poissonsVO) {
 			aDAO.addPoisson(pVO.getEspece(), idUser);
 		}
